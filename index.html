@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心灵阳光 - 青少年心理健康服务平台</title>
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-color: #5d9cec;
+            --secondary-color: #f6bb42;
+            --accent-color: #37bc9b;
+            --light-color: #f5f7fa;
+            --dark-color: #434a54;
+            --text-color: #333;
+            --border-radius: 6px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #4a89dc;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #2e9e81;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(93, 156, 236, 0.8), rgba(55, 188, 155, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+            /* 轮播图区域 */
+        .carousel-section {
+            padding: 60px 0;
+            background-color: #f8faff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d3436;
+            font-size: 2rem;
+        }
+        
+        /* 轮播图样式 */
+        .highlight-slider {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slides-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            min-width: 100%;
+            padding: 40px;
+            position: relative;
+        }
+        
+        /* 三张幻灯片的不同背景色 */
+        .slide:nth-child(1) {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        .slide:nth-child(2) {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .slide:nth-child(3) {
+            background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
+        }
+        
+        .slide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 400px;
+        }
+        
+        .slide-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .slide-image img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slide-text {
+            flex: 1;
+            padding: 0 40px;
+        }
+        
+        .slide-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        /* 不同幻灯片的标签颜色 */
+        .slide:nth-child(1) .slide-tag {
+            background-color: #6ab7ff;
+            color: white;
+        }
+        
+        .slide:nth-child(2) .slide-tag {
+            background-color: #ff7675;
+            color: white;
+        }
+        
+        .slide:nth-child(3) .slide-tag {
+            background-color: #a29bfe;
+            color: white;
+        }
+        
+        .slide-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2d3436;
+        }
+        
+        .slide-text p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: #636e72;
+        }
+        
+        .slide-features {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        /* 导航控制 */
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .slider-dot.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+        
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #636e72;
+            transition: all 0.3s;
+        }
+        
+        .slider-arrow:hover {
+            background-color: white;
+        }
+        
+        .arrow-left {
+            left: 20px;
+        }
+        
+        .arrow-right {
+            right: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .carousel-section {
+                padding: 40px 0;
+            }
+            
+            .slide-content {
+                flex-direction: column;
+                height: auto;
+                padding: 30px 0;
+            }
+            
+            .slide-text {
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .slide-features {
+                justify-content: center;
+            }
+            
+            .slide-image {
+                margin-bottom: 20px;
+            }
+            
+            .slide {
+                padding: 20px;
+            }
+        }
+
+       
+        
+        /* 数据可视化 */
+        .data-section {
+            background-color: var(--light-color);
+        }
+        
+        .chart-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        
+        /* 服务预约 */
+        .service-section {
+            background-color: white;
+        }
+        
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* 志愿者 */
+        .volunteer-section {
+            background-color: var(--light-color);
+        }
+        
+        .volunteer-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        
+        /* 资源中心 */
+        .resource-section {
+            background-color: white;
+        }
+        
+        .resource-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            margin: 0 5px 10px;
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .resource-item {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .resource-content {
+            padding: 20px;
+        }
+        
+        .resource-category {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        /* 留言板 */
+        .testimonial-section {
+            background-color: var(--light-color);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(55, 188, 155, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 30px;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+ 
+
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">心灵<span>阳光</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="projects.html">项目展示</a></li>
+                    <li><a href="#services">服务预约</a></li>
+                    <li><a href="#volunteers">志愿者</a></li>
+                    <li><a href="#resources">资源中心</a></li>
+                    <li><a href="#testimonials">留言板</a></li>
+                </ul>
+                <div class="mobile-menu-btn">☰</div>
+            </nav>
+        </div>
+    </header>
+      <script>
+     // 选择所有导航栏中的链接元素
+document.querySelectorAll('nav a').forEach(link => {
+    // 为每个链接添加点击事件监听器
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // 阻止默认的链接跳转行为
+
+        /* 隐藏所有页面 */
+        document.querySelectorAll('main, section').forEach(page => {
+            page.style.display = 'none'; // 将每个页面设置为隐藏
+        });
+
+        // 根据点击的链接获取对应的页面ID
+        const pageId = this.getAttribute('href').substring(1);
+        // 显示对应的页面
+        document.getElementById(pageId).style.display = 'block';
+    });
+});
+
+  </script>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>青少年心理健康服务平台</h1>
+                <p>由遂溪县团委与广东12355联合打造的专业心理健康服务平台，为青少年提供心理咨询、团体辅导、教育培训等全方位服务，助力青少年健康成长。</p>
+                <a href="#services" class="btn btn-accent">立即预约</a>
+                <a href="#volunteers" class="btn">加入志愿者</a>
+            </div>
+        </div>
+    </section>
+      <!-- 轮播图区域 -->
+    <section class="carousel-section" id="home">
+        <div class="container">
+            <h2 class="section-title">心灵守护 · 青少年心理健康</h2>
+            
+            <!-- 轮播图组件 -->
+            <div class="highlight-slider">
+                <!-- 幻灯片容器 -->
+                <div class="slides-container">
+                    <!-- 幻灯片1 - 项目亮点 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://via.placeholder.com/400x300/6ab7ff/ffffff?text=心理团辅活动" alt="心理团辅活动">
+                            </div>
+                            <div class="slide-text">
+                                <span class="slide-tag">项目亮点</span>
+                                <h2>专业心理团辅，守护青少年心理健康</h2>
+                                <p>我们的专业团队为青少年提供系统化、科学化的团体心理辅导服务，已帮助超过5000名学生改善情绪管理能力，提升心理韧性。</p>
+                                <div class="slide-features">
+                                    <div class="feature">
+                                        <div class="feature-icon">❤️</div>
+                                        <span>公益服务</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon">🎓</div>
+                                        <span>专业团队</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon">🏠</div>
+                                        <span>温暖陪伴</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 幻灯片2 - 近期活动 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://via.placeholder.com/400x300/ff7675/ffffff?text=近期活动" alt="近期活动">
+                            </div>
+                            <div class="slide-text">
+                                <span class="slide-tag">近期活动</span>
+                                <h2>"心灵花园"暑期特别活动</h2>
+                                <p>2023年7月15日-8月20日，每周六上午9:00-11:30，我们将开展以园艺治疗为主题的心理团辅活动，帮助青少年释放压力，收获成长。</p>
+                                <div class="slide-features">
+                                    <div class="feature">
+                                        <div class="feature-icon">📅</div>
+                                        <span>7月15日开启</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon">👫</div>
+                                        <span>8-15岁青少年</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon">📍</div>
+                                        <span>遂溪县青少年活动中心</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 幻灯片3 - 用户评价 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://via.placeholder.com/400x300/a29bfe/ffffff?text=用户评价" alt="用户评价">
+                            </div>
+                            <div class="slide-text">
+                                <span class="slide-tag">用户评价</span>
+                                <h2>"孩子变得更加开朗自信了"</h2>
+                                <p>"参加团辅活动后，我的孩子学会了更好地表达情绪，与同学的关系也改善了。感谢心理老师的专业指导和温暖陪伴！"</p>
+                                <div class="slide-features">
+                                    <div class="feature">
+                                        <div class="feature-icon">⭐</div>
+                                        <span>98% 满意度</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon">👨‍👩‍👧</div>
+                                        <span>张妈妈，学生家长</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon">💌</div>
+                                        <span>2023年6月反馈</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 导航箭头 -->
+                <div class="slider-arrow arrow-left">❮</div>
+                <div class="slider-arrow arrow-right">❯</div>
+                
+                <!-- 导航点 -->
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 轮播图功能实现
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slides-container');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            const arrowLeft = document.querySelector('.arrow-left');
+            const arrowRight = document.querySelector('.arrow-right');
+            
+            let currentSlide = 0;
+            const slideCount = slides.length;
+            
+            // 更新轮播图位置和活动点
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // 下一张幻灯片
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slideCount;
+                updateSlider();
+            }
+            
+            // 上一张幻灯片
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+                updateSlider();
+            }
+            
+            // 点击导航点跳转
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                });
+            });
+            
+            // 箭头控制
+            arrowRight.addEventListener('click', nextSlide);
+            arrowLeft.addEventListener('click', prevSlide);
+            
+            // 自动轮播
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // 鼠标悬停时暂停自动轮播
+            const sliderContainer = document.querySelector('.highlight-slider');
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+            
+            // 触摸滑动支持
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            sliderContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            sliderContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                const diff = touchStartX - touchEndX;
+                if (diff > 50) {
+                    nextSlide(); // 向左滑动
+                } else if (diff < -50) {
+                    prevSlide(); // 向右滑动
+                }
+            }
+        });
+    </script>
+
+  
+    <!-- 数据可视化 -->
+    <section class="section data-section">
+        <div class="container">
+            <h2 class="section-title">服务数据</h2>
+            <div class="chart-container">
+                <canvas id="serviceChart" height="300"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="feedbackChart" height="300"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务预约 -->
+    <section class="section service-section" id="services">
+        <div class="container">
+            <h2 class="section-title">服务预约</h2>
