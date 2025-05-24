@@ -765,16 +765,17 @@
 .volunteer-title {
     color: #2c3e50;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     font-size: 24px;
     margin-top: 50px;
 }
+
 
 /* 标签导航样式 */
 .volunteer-tabs {
     display: flex;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .tab-btn {
@@ -819,7 +820,7 @@
     background-color: #e8f4fc;
     padding: 15px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .recruitment-info h3 {
@@ -1036,136 +1037,214 @@
         
         /* 资源中心 */
        /* 资源共享平台模块样式 */
+/* 资源中心 - 改进版 */
+.resources {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+}
+
 .resource-module {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-bottom: 30px;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 60px;
+    transition: var(--transition);
+}
+
+.resource-module:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .module-title {
-    color: #2c3e50;
-    margin-top: 0;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* 选项卡样式 */
+/* 选项卡样式 - 改进 */
 .resource-tabs {
     display: flex;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    justify-content: center;
 }
 
 .resource-tab {
-    padding: 8px 20px;
+    padding: 12px 30px;
     background: none;
     border: none;
     border-bottom: 3px solid transparent;
     cursor: pointer;
-    color: #7f8c8d;
+    color: var(--light-text);
     font-weight: 600;
-    transition: all 0.3s;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.resource-tab:hover {
+    color: var(--primary-color);
 }
 
 .resource-tab.active {
-    color: #3498db;
-    border-bottom-color: #3498db;
+    color: var(--primary-color);
+    border-bottom-color: var(--accent-color);
 }
 
-/* 内容区域 */
+/* 内容区域 - 改进 */
 .resource-content {
     display: none;
-}
-
-.resource-content.active {
-    display: block;
     animation: fadeIn 0.5s;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.resource-content.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-/* 资源项目样式 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 资源项目样式 - 改进 */
 .resource-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    transition: transform 0.3s;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin-bottom: 0;
 }
 
 .resource-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .resource-item i {
-    font-size: 32px;
-    color: #3498db;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
 }
 
 .resource-item h4 {
-    margin: 0 0 8px;
-    color: #2c3e50;
+    margin: 0 0 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
 .resource-item p {
-    color: #7f8c8d;
-    font-size: 14px;
-    margin: 0 0 15px;
+    color: var(--light-text);
+    margin: 0 0 20px;
+    line-height: 1.6;
 }
 
 .resource-link, .resource-download {
-    padding: 6px 15px;
-    border-radius: 4px;
+    padding: 12px 25px;
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+    margin: 5px;
 }
 
 .resource-link {
-    background: #3498db;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
 }
 
 .resource-link:hover {
-    background: #2980b9;
+    background: var(--dark-primary);
+    transform: scale(1.05);
 }
 
 .resource-download {
-    background: #2ecc71;
-    color: white;
+    background: var(--accent-color);
+    color: var(--white);
 }
 
 .resource-download:hover {
-    background: #27ae60;
+    background: var(--dark-accent);
+    transform: scale(1.05);
 }
 
-/* 政策法规样式 */
+/* 政策法规样式 - 改进 */
+/* 政策法规部分 - 保留原有风格 */
+.policy-section {
+    padding: 40px 0;
+}
+
+.policy-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.policy-header h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.policy-header p {
+    color: #7f8c8d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 搜索框样式 */
+/* 政策与法规主容器 */
+.policy-section {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column; /* 改为垂直排列 */
+}
+
+/* 标题部分保持不变 */
+.policy-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.policy-header h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.policy-header p {
+    color: #7f8c8d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 搜索框容器 - 新增 */
+.policy-search-container {
+    order: 1; /* 确保在标题下方 */
+    margin: 0 auto 30px; /* 上下30px间距，左右自动居中 */
+    width: 100%;
+    max-width: 600px;
+}
+
+/* 搜索框样式调整 */
 .policy-search {
     display: flex;
-    margin-bottom: 20px;
+    width: 100%;
 }
 
 .policy-search input {
     flex: 1;
-    padding: 10px;
+    padding: 12px 15px;
     border: 1px solid #ddd;
-    border-right: none;
     border-radius: 4px 0 0 4px;
+    font-size: 14px;
 }
 
 .policy-search button {
-    padding: 0 15px;
+    padding: 12px 20px;
     background: #3498db;
     color: white;
     border: none;
@@ -1173,36 +1252,125 @@
     cursor: pointer;
 }
 
+/* 政策列表容器 - 新增 */
+.policy-list-container {
+    order: 2; /* 确保在搜索框下方 */
+    width: 100%;
+}
 .policy-item {
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #eee;
     border-radius: 6px;
-    margin-bottom: 15px;
+    background: white;
+    transition: all 0.3s;
 }
 
-.policy-item h4 {
-    margin: 0 0 5px;
+.policy-item:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.policy-item h3 {
+    margin: 0 0 10px;
     color: #2c3e50;
+    font-size: 18px;
 }
 
 .policy-meta {
+    display: flex;
+    gap: 15px;
     color: #7f8c8d;
     font-size: 13px;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.policy-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.policy-meta i {
+    font-size: 14px;
+}
+
+.policy-description {
+    color: #7f8c8d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .policy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     color: #3498db;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    transition: all 0.3s;
 }
 
 .policy-link:hover {
-    text-decoration: underline;
+    color: #2980b9;
+    gap: 8px;
+}
+
+.policy-link i {
+    font-size: 12px;
+}
+
+/* 分页样式 */
+.policy-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 5px;
+}
+
+.policy-pagination a {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.policy-pagination a:hover {
+    background: #f5f5f5;
+}
+
+.policy-pagination a.active {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
 }
 
 /* 响应式设计 */
+@media (max-width: 768px) {
+    .policy-search {
+        margin-bottom: 20px;
+    }
+    
+    .policy-item {
+        padding: 15px;
+    }
+    
+    .policy-meta {
+        gap: 10px;
+    }
+    
+    .policy-pagination {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* 响应式设计 - 改进 */
 @media (max-width: 768px) {
     .resource-tabs {
         flex-wrap: wrap;
@@ -1211,11 +1379,26 @@
     .resource-tab {
         flex: 1 0 auto;
         margin-bottom: 5px;
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    
+    .resource-content.active {
+        grid-template-columns: 1fr;
+    }
+    
+    .policy-meta {
+        flex-direction: column;
+        gap: 5px;
     }
 }
         
         /* 留言板 */
        /* 留言板整体样式 */
+
+       /* 留言板标题样式 - 类似资源中心 */
+
+/* 留言板整体容器 - 保持原有样式 */
 .message-board {
     font-family: 'Arial', sans-serif;
     max-width: 800px;
@@ -1226,6 +1409,51 @@
     background-color: #f9f9f9;
 }
 
+/* 留言板标题 - 类似资源中心风格 */
+.message-board-title {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee; /* 底部浅灰色分隔线 */
+    text-align: center; /* 标题居中 */
+}
+
+.message-board-title h2 {
+    color: #2c3e50; /* 深蓝色文字 */
+    font-size: 1.8rem; /* 适当标题大小 */
+    margin: 0;
+    font-weight: 600;
+    position: relative; /* 为装饰元素定位 */
+    display: inline-block; /* 使伪元素能正确对齐 */
+    padding-bottom: 10px; /* 标题与装饰线间距 */
+}
+
+.message-board-title h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* 装饰线长度 */
+    height: 3px; /* 装饰线粗细 */
+    background-color: #3498db; /* 蓝色装饰线 */
+    border-radius: 3px; /* 线条两端圆角 */
+}
+.message-board-title {
+    margin-bottom: 30px;
+    padding: 50px 0 35px; /* 增加上间距 */
+    text-align: center;
+}
+
+.message-board-title h2 {
+    color: #2c3e50 !important; /* 强制深色 */
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    background-color: transparent !important;
+}
 /* 输入区域样式 */
 .message-input {
     margin-bottom: 20px;
@@ -1371,7 +1599,8 @@
 #load-more:hover {
     background-color: #2980b9;
 }
-        
+     
+   
         /* 页脚 */
         footer {
             background-color: var(--dark-color);
@@ -2068,7 +2297,7 @@ faqItems.forEach(item => {
     <section class="volunteers" id="volunteers" style="display: none;">
         <div class= "container">
              
-<h2 class="volunteer-title">志愿者管理</h2>
+ <h2 class="volunteer-title">志愿者管理</h2>
     
     <!-- 导航标签 -->
     <div class="volunteer-tabs">
@@ -2324,13 +2553,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <i class="fas fa-book-open"></i>
             <h4>心理健康教案</h4>
             <p>全套心理健康课程教学方案</p>
-            <a href="#" class="resource-download">下载</a>
+            <a href="https://xiaoxue.ruiwen.com/jiaoxuesheji/323054.html" class="resource-download">查看</a>
         </div>
         <div class="resource-item">
             <i class="fas fa-tools"></i>
             <h4>教学工具包</h4>
             <p>课件、活动设计等教学资源</p>
-            <a href="#" class="resource-download">下载</a>
+            <a href="http://yishuliaofa.com/tuanfukechengban/" class="resource-download">下载</a>
         </div>
          </div>
           <!-- 政策法规库 -->
@@ -2342,13 +2571,34 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="policy-item">
             <h4>中小学心理健康教育指导纲要</h4>
             <p class="policy-meta">教育部 · 2022年</p>
-            <a href="#" class="policy-link">查看详情</a>
+            <a href="https://www.gov.cn/zwgk/2012-12/18/content_2292504.htm" class="policy-link">查看详情</a>
         </div>
         <div class="policy-item">
             <h4>学生心理健康工作实施方案</h4>
             <p class="policy-meta">卫健委 · 2021年</p>
-            <a href="#" class="policy-link">查看详情</a>
+            <a href="https://ncmhc.org.cn/channel/newsinfo/7345" class="policy-link">查看详情</a>
         </div>
+        <div class="policy-item">
+            <h4>《中华人民共和国精神卫生法》</h4>
+            <p class="policy-meta">全国人民代表大会常务委员会 · 2012年</p>
+            <a href="https://www.gov.cn/guoqing/2021-10/29/content_5647635.htm" class="policy-link">查看详情</a>
+        </div>
+        <div class="policy-item">
+            <h4>《全国精神卫生工作规划（2015—2020年）》</h4>
+            <p class="policy-meta">国家卫生计生委、中央综治办、发展改革委等十部门制定 · 2015年</p>
+            <a href="https://12324122.s21i.faiusr.com/61/1/ABUIABA9GAAg-tPhiwYo6LTjrQI.pdf" class="policy-link">查看详情</a>
+        </div>
+        <div class="policy-item">
+            <h4>《关于加强心理健康服务的指导意见》</h4>
+            <p class="policy-meta">国家卫生计生委等22部委联合印发 · 2016年</p>
+            <a href="https://ncmhc.org.cn/channel/newsinfo/6264" class="policy-link">查看详情</a>
+        </div>
+        <div class="policy-item">
+            <h4>《全国社会心理服务体系建设试点工作方案》</h4>
+            <p class="policy-meta">国家卫生健康委、中央政法委、中国残联等十部委。 · 2018年</p>
+            <a href="https://www.nhc.gov.cn/jkj/s5888/201812/f305fa5ec9794621882b8bebf1090ad9.shtml" class="policy-link">查看详情</a>
+        </div>
+
     </div>
        
          </div>
@@ -2416,14 +2666,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- 留言板 -->
     <section class="contact" id="testimonials" style="display: none;">
-        <div class="container">
-            <h2 class="section-title">留言板</h2>
-            
-           <!-- 留言板容器 -->
-<div class="message-board">
-    <!-- 留言输入区域 -->
-    <div class="message-input">
-        <h3>留言板</h3>
+        <div class="message-board">
+             <div class="message-board-title">
+            <h2 >留言板</h2>
+            </div>
+          </div>
+   <div class="message-content">
+    
         <!-- 用户名输入框，默认值为"匿名用户" -->
         <input type="text" id="username" placeholder="请输入用户名" value="匿名用户">
         <!-- 留言内容输入框 -->
@@ -2446,8 +2695,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- 加载更多按钮 -->
         <button id="load-more" style="display: none;">加载更多留言</button>
     </div>
-</div>
-        </div>
+    
     </section>
 
 
