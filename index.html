@@ -159,11 +159,13 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding-top: 50px;
         }
         
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
+            margin-top: 40px;
         }
         
         .hero p {
@@ -181,6 +183,7 @@
             margin-bottom: 40px;
             color: #2d3436;
             font-size: 2rem;
+             margin-top: 40px;
         }
         
         /* 轮播图样式 */
@@ -355,6 +358,11 @@
             right: 20px;
         }
         
+
+
+
+
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .carousel-section {
@@ -400,192 +408,969 @@
             margin-bottom: 30px;
         }
         
-        /* 服务预约 */
-        .service-section {
-            background-color: white;
-        }
+       /* ===== 项目展示样式 ===== */
+.projects {
+    padding: 80px 0;
+    background-color: var(#f0f0f0);
+}
+
+.project-intro {
+    background-color: rgba(0, 255, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.project-intro h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.project-intro p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.partners {
+    margin-top: 30px;
+}
+
+.partners h4 {
+    margin-bottom: 15px;
+    color: var(--light-text);
+}
+
+.partner-logos {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.partner-logos img {
+    max-height: 60px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.partner-logos img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.activity-feed {
+    margin: 60px 0;
+}
+
+.activities {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.activity {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.activity:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.activity img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.activity-content {
+    padding: 20px;
+}
+
+.activity-content h4 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.activity-content time {
+    display: block;
+    color: var(--light-text);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.activity-content p {
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--dark-accent);
+}
+
+.data-visualization {
+    margin-top: 60px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.chart-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.chart-container p {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ===== 服务预约样式 ===== */
+.services {
+    padding: 80px 0;
+    background-color: var(#f0f0f0);
+}
+
+.service-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.service-card {
+    background-color:  rgba(0, 255, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: rgba(0, 172, 238, 0.5);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    margin-bottom: 20px;
+    color: var(--light-text);
+}
+
+.booking-form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+#formTitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select 
+{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus 
+{
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(137, 207, 240, 0.3);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.hotline-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hotline-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background-color:  #f0f0f0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-top: 20px;
+}
+
+.hotline-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.hotline-content p {
+    margin-bottom: 10px;
+}
+
+.hotline-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 30px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.hotline-btn:hover {
+    background-color: var(--dark-accent);
+    transform: scale(1.05);
+}
+
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-list {
+    margin-top: 30px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--white);
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background-color: #f5f5f5;
+}
+
+.faq-question i {
+    transition: var(--transition);
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--white);
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 20px 0;
+    line-height: 1.8;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding:  20px;
+}
+
         
-        .service-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        
-        .tab-btn {
-            padding: 10px 20px;
-            background-color: transparent;
-            border: none;
-            border-bottom: 3px solid transparent;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-btn.active {
-            border-bottom: 3px solid var(--accent-color);
-            color: var(--accent-color);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-        }
-        
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        /* 志愿者 */
-        .volunteer-section {
-            background-color: var(--light-color);
-        }
-        
-        .volunteer-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--box-shadow);
-            margin-bottom: 30px;
-        }
+       /* 志愿者管理模块样式 */
+.volunteer-module {
+    font-family: 'Arial', sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    margin-top: 50px;
+}
+
+/* 标签导航样式 */
+.volunteer-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    color: #3498db;
+}
+
+.tab-btn.active {
+    color: #3498db;
+    border-bottom: 3px solid #3498db;
+    font-weight: bold;
+}
+
+/* 标签内容区域样式 */
+.tab-pane {
+    display: none;
+    padding: 15px;
+    animation: fadeIn 0.5s;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 招募信息样式 */
+.recruitment-info {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.recruitment-info h3 {
+    color: #2980b9;
+    margin-top: 0;
+}
+
+/* 表单样式 */
+.volunteer-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* 文件上传样式 */
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+/* 提交按钮 */
+.submit-btn {
+    grid-column: span 2;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 培训资料卡片样式 */
+.training-materials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.material-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.material-card h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.material-links {
+    margin-top: 10px;
+}
+
+.download-link,
+.video-link {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.download-link {
+    background-color: #e8f4fc;
+    color: #2980b9;
+}
+
+.video-link {
+    background-color: #f0f8ff;
+    color: #3498db;
+}
+
+/* 考核按钮样式 */
+.test-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.test-btn:hover {
+    background-color: #219653;
+}
+
+.test-result {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* 服务记录摘要样式 */
+.record-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.record-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.record-item h4 {
+    margin-top: 0;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.record-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 5px 0;
+}
+
+.record-value span {
+    font-size: 14px;
+    font-weight: normal;
+    color: #7f8c8d;
+}
+
+/* 排班表格样式 */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.schedule-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.completed {
+    color: #27ae60;
+}
+
+.upcoming {
+    color: #f39c12;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .volunteer-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .submit-btn {
+        grid-column: span 1;
+    }
+    
+    .training-materials {
+        grid-template-columns: 1fr;
+    }
+    
+    .record-summary {
+        grid-template-columns: 1fr;
+    }
+}
         
         /* 资源中心 */
-        .resource-section {
-            background-color: white;
-        }
-        
-        .resource-filter {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 8px 15px;
-            margin: 0 5px 10px;
-            background-color: transparent;
-            border: 1px solid var(--primary-color);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .resource-item {
-            background-color: var(--light-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .resource-content {
-            padding: 20px;
-        }
-        
-        .resource-category {
-            display: inline-block;
-            padding: 3px 10px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-        }
+       /* 资源共享平台模块样式 */
+.resource-module {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.module-title {
+    color: #2c3e50;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 选项卡样式 */
+.resource-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.resource-tab {
+    padding: 8px 20px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    color: #7f8c8d;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.resource-tab.active {
+    color: #3498db;
+    border-bottom-color: #3498db;
+}
+
+/* 内容区域 */
+.resource-content {
+    display: none;
+}
+
+.resource-content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 资源项目样式 */
+.resource-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.resource-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.resource-item i {
+    font-size: 32px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.resource-item h4 {
+    margin: 0 0 8px;
+    color: #2c3e50;
+}
+
+.resource-item p {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+.resource-link, .resource-download {
+    padding: 6px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.resource-link {
+    background: #3498db;
+    color: white;
+}
+
+.resource-link:hover {
+    background: #2980b9;
+}
+
+.resource-download {
+    background: #2ecc71;
+    color: white;
+}
+
+.resource-download:hover {
+    background: #27ae60;
+}
+
+/* 政策法规样式 */
+.policy-search {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.policy-search input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.policy-search button {
+    padding: 0 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.policy-item {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.policy-item h4 {
+    margin: 0 0 5px;
+    color: #2c3e50;
+}
+
+.policy-meta {
+    color: #7f8c8d;
+    font-size: 13px;
+    margin: 0 0 10px;
+}
+
+.policy-link {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.policy-link:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .resource-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .resource-tab {
+        flex: 1 0 auto;
+        margin-bottom: 5px;
+    }
+}
         
         /* 留言板 */
-        .testimonial-section {
-            background-color: var(--light-color);
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            font-size: 5rem;
-            color: rgba(55, 188, 155, 0.1);
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            line-height: 1;
-        }
-        
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-        
-        .author-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: #777;
-            font-size: 0.9rem;
-        }
+       /* 留言板整体样式 */
+.message-board {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* 输入区域样式 */
+.message-input {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.message-input h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* 用户名输入框样式 */
+#username {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 留言内容输入框样式 */
+#message-content {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* 提交按钮样式 */
+#submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* 表情选择器样式 */
+.emoji-container {
+    margin-top: 10px;
+}
+
+.emoji {
+    font-size: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}
+
+/* 留言列表样式 */
+.messages-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 单条留言卡片样式 */
+.message-card {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.message-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* 留言头部信息（用户名和时间） */
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* 用户名样式 */
+.message-username {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 时间样式 */
+.message-time {
+    color: #7f8c8d;
+}
+
+/* 留言内容样式 */
+.message-body {
+    white-space: pre-wrap; /* 保留换行和空格 */
+    line-height: 1.5;
+    color: #34495e;
+}
+
+/* 删除按钮样式 */
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* 加载更多按钮样式 */
+#load-more {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#load-more:hover {
+    background-color: #2980b9;
+}
         
         /* 页脚 */
         footer {
@@ -705,6 +1490,15 @@
                 padding: 60px 0;
             }
         }
+
+         html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* 适配固定导航栏 */
+        }
+        section {
+            min-height: 100vh; /* 确保锚点元素有高度 */
+        }
+
     </style>
 </head>
 
@@ -718,7 +1512,7 @@
                 <a href="#" class="logo">心灵<span>阳光</span></a>
                 <ul class="nav-links">
                     <li><a href="#home">首页</a></li>
-                    <li><a href="projects.html">项目展示</a></li>
+                    <li><a href="#projects">项目展示</a></li>
                     <li><a href="#services">服务预约</a></li>
                     <li><a href="#volunteers">志愿者</a></li>
                     <li><a href="#resources">资源中心</a></li>
@@ -750,18 +1544,40 @@ document.querySelectorAll('nav a').forEach(link => {
   </script>
 
     <!-- 英雄区域 -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" style="display: none;">
         <div class="container">
             <div class="hero-content">
                 <h1>青少年心理健康服务平台</h1>
                 <p>由遂溪县团委与广东12355联合打造的专业心理健康服务平台，为青少年提供心理咨询、团体辅导、教育培训等全方位服务，助力青少年健康成长。</p>
+                <ul class="hero-links">
                 <a href="#services" class="btn btn-accent">立即预约</a>
                 <a href="#volunteers" class="btn">加入志愿者</a>
+                 </ul>
             </div>
         </div>
     </section>
+    <script>
+// 页脚专属跳转逻辑
+document.querySelectorAll('.hero a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // 阻止默认跳转
+        
+        // 1. 隐藏所有页面
+        document.querySelectorAll('main, section').forEach(page => {
+            page.style.display = 'none';
+        });
+        
+        // 2. 显示目标页面（从href提取ID，如#home→home）
+        const heroId = this.getAttribute('href').substring(1);
+        document.getElementById(heroId).style.display = 'block';
+        
+        
+    });
+});
+</script>
+
       <!-- 轮播图区域 -->
-    <section class="carousel-section" id="home">
+    <section class="carousel-section" >
         <div class="container">
             <h2 class="section-title">心灵守护 · 青少年心理健康</h2>
             
@@ -773,7 +1589,7 @@ document.querySelectorAll('nav a').forEach(link => {
                     <div class="slide">
                         <div class="slide-content">
                             <div class="slide-image">
-                                <img src="https://via.placeholder.com/400x300/6ab7ff/ffffff?text=心理团辅活动" alt="心理团辅活动">
+                                <img src="images/section1.jpg" alt="心理团辅活动">
                             </div>
                             <div class="slide-text">
                                 <span class="slide-tag">项目亮点</span>
@@ -801,7 +1617,7 @@ document.querySelectorAll('nav a').forEach(link => {
                     <div class="slide">
                         <div class="slide-content">
                             <div class="slide-image">
-                                <img src="https://via.placeholder.com/400x300/ff7675/ffffff?text=近期活动" alt="近期活动">
+                                <img src="images/section2.jpg" alt="近期活动">
                             </div>
                             <div class="slide-text">
                                 <span class="slide-tag">近期活动</span>
@@ -829,7 +1645,7 @@ document.querySelectorAll('nav a').forEach(link => {
                     <div class="slide">
                         <div class="slide-content">
                             <div class="slide-image">
-                                <img src="https://via.placeholder.com/400x300/a29bfe/ffffff?text=用户评价" alt="用户评价">
+                                <img src="images/section3.jpg" alt="用户评价">
                             </div>
                             <div class="slide-text">
                                 <span class="slide-tag">用户评价</span>
@@ -950,9 +1766,71 @@ document.querySelectorAll('nav a').forEach(link => {
         });
     </script>
 
-  
+    
+
+  <section class="projects" id="projects" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">我们的项目</h2>
+            
+            <!-- 项目简介 -->
+            <div class="project-intro">
+                <h3>项目背景</h3>
+                <p>本项目由遂溪县团委、广东12355青少年服务平台与来自西北师范大学不同学院的学生们联合发起，依托大学生专业优势与地方资源整合，构建集筛查、干预、成长于一体的全链条心理服务体系，靶向解决县域心理服务资源短缺、形式单一等现实难题，推动青少年心理素养提升与大学生实践成长的双向增益。</p>
+                
+                <div class="partners">
+                    <h4>合作单位</h4>
+                    <div class="partner-logos">
+                      <h1>遂溪县团委</h1>
+                       <h1> 广东12355</h1>
+                      
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 活动动态 -->
+            <div class="activity-feed">
+                <h3>活动动态</h3>
+                <div class="activities">
+                    <!-- 活动1 -->
+                    <article class="activity">
+                        <img src="images/activity1.jpg" alt="心理健康讲座">
+                        <div class="activity-content">
+                            <h4>校园心理健康讲座</h4>
+                            <time datetime="2023-05-10">2023年5月10日</time>
+                            <p>在遂溪县中学举办了主题为"压力管理与情绪调节"的心理健康讲座"</p>
+                            <a href="#" class="read-more">查看详情</a>
+                        </div>
+                    </article>
+                    
+                    <!-- 活动2 -->
+                    <article class="activity">
+                        <img src="images/activity2.jpg" alt="团体辅导">
+                        <div class="activity-content">
+                            <h4>团体辅导活动</h4>
+                            <time datetime="2023-04-25">2023年4月25日</time>
+                            <p>开展了为期一周的"自我认知与成长"团体辅导活动...</p>
+                            <a href="#" class="read-more">查看详情</a>
+                        </div>
+                    </article>
+                   <!-- 活动3 -->
+                    <article class="activity">
+                        <img src="images/activity3.jpg" alt="团体辅导">
+                        <div class="activity-content">
+                            <h4>防校园欺凌</h4>
+                            <time datetime="2023-04-25">2023年10月20日</time>
+                            <p>在遂溪县中学举办了主题为"防校园欺凌"的心理健康讲座"</p>
+                            <a href="#" class="read-more">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+      </section>
+
+
+
+
     <!-- 数据可视化 -->
-    <section class="section data-section">
+    <section class="section data-section"  style="display: none;">
         <div class="container">
             <h2 class="section-title">服务数据</h2>
             <div class="chart-container">
@@ -964,7 +1842,865 @@ document.querySelectorAll('nav a').forEach(link => {
         </div>
     </section>
 
-    <!-- 服务预约 -->
-    <section class="section service-section" id="services">
+    
+<!-- 服务预约模块 -->
+    <section class="services" id="services" style="display: none;">
         <div class="container">
             <h2 class="section-title">服务预约</h2>
+            
+            <!-- 服务分类 -->
+            <div class="service-types">
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>团体辅导</h3>
+                    <p>针对小组的心理成长活动，促进人际互动和自我认知</p>
+                    <button class="btn book-btn" data-service="group">预约</button>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-user"></i>
+                    <h3>个体咨询</h3>
+                    <p>一对一专业心理咨询，解决个人心理困扰</p>
+                    <button class="btn book-btn" data-service="individual">预约</button>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>教师培训</h3>
+                    <p>为教师提供心理健康教育技能培训</p>
+                    <button class="btn book-btn" data-service="teacher">预约</button>
+                </div>
+            </div>
+            
+            <!-- 预约表单 (默认隐藏) -->
+            <div class="booking-form" id="bookingForm" style="display:none;">
+                <h3 id="formTitle">团体辅导预约</h3>
+                <form id="serviceForm">
+                    <input type="hidden" id="serviceType" name="serviceType" value="group">
+                    
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">联系电话</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">年龄</label>
+                        <input type="number" id="age" name="age" min="10" max="25">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">预约日期</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">咨询需求描述</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn submit-btn">提交预约</button>
+                </form>
+            </div>
+            
+            <!-- 12355热线 -->
+            <div class="hotline-section">
+                <h3>紧急心理援助</h3>
+                <div class="hotline-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="hotline-content">
+                        <p>如需紧急心理援助，请拨打广东12355青少年服务热线</p>
+                        <a href="tel:12355" class="hotline-btn">拨打 12355</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 常见问题 -->
+            <div class="faq-section">
+                <h3>常见问题</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">此项目服务人群？<i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer" >
+                            <p>主要针对留守儿童、流动儿童、初高中学生、待业青年及特殊儿童等存在心理问题的人群。</p>
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">如何成为志愿者？<i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p>请前往<a href="#volunteers">志愿者页面</a>填写报名表，我们会有专人联系您。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script >
+    document.addEventListener('DOMContentLoaded', function() {
+    // 1. 处理服务预约按钮点击
+    const bookButtons = document.querySelectorAll('.book-btn');
+    const bookingForm = document.getElementById('bookingForm');
+    const formTitle = document.getElementById('formTitle');
+    const serviceTypeInput = document.getElementById('serviceType');
+    
+    // 服务类型映射（用于显示中文名称）
+    const serviceNames = {
+        'group': '团体辅导',
+        'individual': '个体咨询',
+        'teacher': '教师培训'
+    };
+    
+    bookButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const serviceType = this.getAttribute('data-service');
+            
+            // 更新表单标题和服务类型
+            formTitle.textContent = `${serviceNames[serviceType]}预约`;
+            serviceTypeInput.value = serviceType;
+            
+            // 显示预约表单
+            bookingForm.style.display = 'block';
+            
+            // 滚动到表单位置（平滑滚动）
+            bookingForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    
+    // 2. 处理表单提交
+    const serviceForm = document.getElementById('serviceForm');
+    
+    serviceForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // 收集表单数据
+        const formData = {
+            serviceType: serviceTypeInput.value,
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            age: document.getElementById('age').value,
+            date: document.getElementById('date').value,
+            message: document.getElementById('message').value,
+            timestamp: new Date().toISOString()
+        };
+        
+        // 这里可以替换为实际的提交逻辑
+        console.log('预约提交数据:', formData);
+        
+        // 模拟提交成功
+        alert(`${serviceNames[formData.serviceType]}预约成功！我们会尽快与您联系。`);
+        
+        // 重置表单
+        serviceForm.reset();
+        bookingForm.style.display = 'none';
+        
+        
+    });
+    
+    // 4. 初始化日期输入（设置最小日期为今天）
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+
+    // 1. 心理咨询收费FAQ交互
+     const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const icon = question.querySelector('i');
+    
+    question.addEventListener('click', function() {
+        item.classList.toggle('active');
+        
+        // 可选：关闭其他FAQ项目
+        if (item.classList.contains('active')) {
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+        }
+        
+        // 切换图标（如果需要更复杂的动画，可以保留现有逻辑）
+        icon.classList.toggle('fa-chevron-down', !item.classList.contains('active'));
+        icon.classList.toggle('fa-chevron-up', item.classList.contains('active'));
+    });
+});
+
+    
+    // 2. 如何成为志愿者跳转功能
+    const volunteerQuestion = document.querySelector('.faq-item:nth-child(2) .faq-question');
+    
+    volunteerQuestion.addEventListener('click', function(e) {
+        e.preventDefault(); // 阻止默认行为
+        
+        // 隐藏所有页面
+        document.querySelectorAll('main, section').forEach(page => {
+            page.style.display = 'none';
+        });
+        
+        // 显示志愿者页面
+        const volunteerPage = document.getElementById('volunteers');
+        if (volunteerPage) {
+            volunteerPage.style.display = 'block';
+            // 平滑滚动到页面顶部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            console.error('志愿者页面元素未找到，请确认存在id="volunteers"的元素');
+        }
+    });
+  });
+</script>
+
+ 
+<!-- 志愿者模块 -->
+    <section class="volunteers" id="volunteers" style="display: none;">
+        <div class= "container">
+             
+<h2 class="volunteer-title">志愿者管理</h2>
+    
+    <!-- 导航标签 -->
+    <div class="volunteer-tabs">
+        <button class="tab-btn active" data-tab="recruitment">招募与报名</button>
+        <button class="tab-btn" data-tab="training">培训资源</button>
+        <button class="tab-btn" data-tab="record">服务记录</button>
+    </div>
+    
+    <!-- 标签内容区域 -->
+    <div class="tab-content">
+        <!-- 招募与报名部分 -->
+        <div id="recruitment" class="tab-pane active">
+            <div class="recruitment-info">
+                <h3>2023年暑期志愿者招募</h3>
+                <p><strong>招募时间：</strong>2023年6月1日-6月30日</p>
+                <p><strong>服务时间：</strong>2023年7月10日-8月20日</p>
+                <p><strong>招募岗位：</strong>社区服务、教育支持、环境保护</p>
+                <p><strong>要求：</strong>年满18周岁，热心公益，有责任心</p>
+            </div>
+            
+            <h3>在线报名</h3>
+            <form id="volunteerForm" class="volunteer-form">
+                <div class="form-group">
+                    <label for="vname">姓名</label>
+                    <input type="text" id="vname" required>
+                </div>
+                <div class="form-group">
+                    <label for="vphone">联系电话</label>
+                    <input type="tel" id="vphone" required>
+                </div>
+                <div class="form-group">
+                    <label for="vemail">电子邮箱</label>
+                    <input type="email" id="vemail" required>
+                </div>
+                <div class="form-group">
+                    <label for="vposition">申请岗位</label>
+                    <select id="vposition" required>
+                        <option value="">请选择...</option>
+                        <option value="community">社区服务</option>
+                        <option value="education">教育支持</option>
+                        <option value="environment">环境保护</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vfile">上传简历/证明材料</label>
+                    <input type="file" id="vfile">
+                </div>
+                <button type="submit" class="submit-btn">提交报名</button>
+            </form>
+        </div>
+        
+        <!-- 培训资源部分 -->
+        <div id="training" class="tab-pane">
+            <h3>志愿者培训资料</h3>
+            <div class="training-materials">
+                <div class="material-card">
+                    <h4>志愿者基础培训</h4>
+                    <p>课件、视频和阅读材料</p>
+                    <div class="material-links">
+                        <a href="#" class="download-link">下载课件</a>
+                        <a href="#" class="video-link">观看视频</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <h4>服务技能培训</h4>
+                    <p>沟通技巧与应急处理</p>
+                    <div class="material-links">
+                        <a href="#" class="download-link">下载课件</a>
+                        <a href="#" class="video-link">观看视频</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>在线考核</h3>
+            <div class="training-test">
+                <p>完成培训后，请参加在线考核</p>
+                <button id="startTest" class="test-btn">开始考核</button>
+                <div id="testResult" class="test-result"></div>
+            </div>
+        </div>
+        
+        <!-- 服务记录部分 -->
+        <div id="record" class="tab-pane">
+            <div class="record-summary">
+                <div class="record-item">
+                    <h4>总服务时长</h4>
+                    <p class="record-value">68 <span>小时</span></p>
+                </div>
+                <div class="record-item">
+                    <h4>奖励积分</h4>
+                    <p class="record-value">850 <span>分</span></p>
+                </div>
+                <div class="record-item">
+                    <h4>参与活动</h4>
+                    <p class="record-value">12 <span>次</span></p>
+                </div>
+            </div>
+            
+            <h3>近期活动排班</h3>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>时间</th>
+                        <th>活动名称</th>
+                        <th>地点</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-07-15</td>
+                        <td>09:00-12:00</td>
+                        <td>社区环保宣传</td>
+                        <td>中央公园</td>
+                        <td class="completed">已完成</td>
+                    </tr>
+                    <tr>
+                        <td>2023-07-22</td>
+                        <td>14:00-17:00</td>
+                        <td>儿童阅读辅导</td>
+                        <td>市图书馆</td>
+                        <td class="completed">已完成</td>
+                    </tr>
+                    <tr>
+                        <td>2023-07-29</td>
+                        <td>08:30-11:30</td>
+                        <td>敬老院服务</td>
+                        <td>夕阳红敬老院</td>
+                        <td class="upcoming">待进行</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    </section>
+<script >
+    // 志愿者管理模块功能实现
+document.addEventListener('DOMContentLoaded', function() {
+    // 标签页切换功能
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // 移除所有按钮和面板的active类
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            // 为当前按钮和对应面板添加active类
+            this.classList.add('active');
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+    
+    // 表单验证和提交
+    const volunteerForm = document.getElementById('volunteerForm');
+    if (volunteerForm) {
+        volunteerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 简单表单验证
+            let isValid = true;
+            const requiredFields = this.querySelectorAll('[required]');
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#ddd';
+                }
+            });
+            
+            if (isValid) {
+                // 这里可以添加AJAX提交逻辑
+                alert('报名表提交成功！我们会尽快与您联系。');
+                this.reset();
+            } else {
+                alert('请填写所有必填字段！');
+            }
+        });
+    }
+    
+    // 模拟开始考核功能
+    const startTestBtn = document.getElementById('startTest');
+    if (startTestBtn) {
+        startTestBtn.addEventListener('click', function() {
+            const testResult = document.getElementById('testResult');
+            testResult.innerHTML = `
+                <h4>考核结果</h4>
+                <p>得分: 85/100</p>
+                <p>状态: <span style="color: #27ae60;">通过</span></p>
+                <p>您已获得志愿者认证！</p>
+            `;
+            testResult.style.backgroundColor = '#e8f8f0';
+            testResult.style.borderLeft = '4px solid #27ae60';
+        });
+    }
+    
+    // 为表单字段添加实时验证
+    const formInputs = document.querySelectorAll('.volunteer-form input, .volunteer-form select');
+    formInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.value.trim()) {
+                this.style.borderColor = '#ddd';
+            }
+        });
+    });
+});
+</script>
+
+ 
+<!-- 资源中心 -->
+   <section class="resource-module" id="resources" style="display: none;">
+    <div class="container">
+            <h2 class="section-title">资源中心</h2>
+            
+            <!-- 资源分类 -->
+              <div class="resource-tabs">
+        <button class="resource-tab active" data-tab="science-tab">科普专栏</button>
+        <button class="resource-tab" data-tab="teacher-tab">教师专区</button>
+        <button class="resource-tab" data-tab="policy-tab">政策法规</button>
+    </div>
+    
+    <!-- 科普专栏 -->
+    <div id="science-tab" class="resource-content active">
+        <div class="resource-item">
+            <i class="fas fa-file-alt"></i>
+            <h4>心理健康知识文章</h4>
+            <p>专业撰写的心理健康科普内容</p>
+            <a href="https://www.xinli001.com/info" class="resource-link">查看</a>
+        </div>
+        <div class="resource-item">
+            <i class="fas fa-video"></i>
+            <h4>科普视频</h4>
+            <p>生动形象的心理健康视频讲解</p>
+            <a href="https://www.xinpianchang.com/search/5280" class="resource-link">观看</a>
+        </div>
+        <div class="resource-item">
+            <i class="fas fa-clipboard-list"></i>
+            <h4>心理测试量表</h4>
+            <p>专业心理测评工具</p>
+            <a href="https://eap.psych.cn/a/" class="resource-link">测试</a>
+        </div>
+    </div>
+    
+    <!-- 教师专区 -->
+    <div id="teacher-tab" class="resource-content">
+        <div class="resource-item">
+            <i class="fas fa-book-open"></i>
+            <h4>心理健康教案</h4>
+            <p>全套心理健康课程教学方案</p>
+            <a href="#" class="resource-download">下载</a>
+        </div>
+        <div class="resource-item">
+            <i class="fas fa-tools"></i>
+            <h4>教学工具包</h4>
+            <p>课件、活动设计等教学资源</p>
+            <a href="#" class="resource-download">下载</a>
+        </div>
+         </div>
+          <!-- 政策法规库 -->
+    <div id="policy-tab" class="resource-content">
+        <div class="policy-search">
+            <input type="text" placeholder="搜索政策文件...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="policy-item">
+            <h4>中小学心理健康教育指导纲要</h4>
+            <p class="policy-meta">教育部 · 2022年</p>
+            <a href="#" class="policy-link">查看详情</a>
+        </div>
+        <div class="policy-item">
+            <h4>学生心理健康工作实施方案</h4>
+            <p class="policy-meta">卫健委 · 2021年</p>
+            <a href="#" class="policy-link">查看详情</a>
+        </div>
+    </div>
+       
+         </div>
+    </section>
+
+<script>
+    
+    // 资源共享平台模块功能
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取模块内的元素
+    const module = document.querySelector('.resource-module');
+    if (!module) return;
+    
+    // 选项卡切换
+    const tabs = module.querySelectorAll('.resource-tab');
+    const contents = module.querySelectorAll('.resource-content');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // 移除所有active类
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // 添加active类
+            tab.classList.add('active');
+            const tabId = tab.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+    
+    // 搜索功能
+    const searchInput = module.querySelector('.policy-search input');
+    const searchBtn = module.querySelector('.policy-search button');
+    
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') performSearch();
+        });
+    }
+    
+    function performSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+            console.log('执行搜索:', query);
+            // 实际应用中这里应该是AJAX请求或过滤显示
+        }
+    }
+    
+    // 资源项点击事件
+    const resourceItems = module.querySelectorAll('.resource-item');
+    resourceItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // 如果不是链接被点击
+            if (!e.target.classList.contains('resource-link') && 
+                !e.target.classList.contains('resource-download')) {
+                const title = this.querySelector('h4').textContent;
+                console.log('打开资源:', title);
+                // 实际应用中这里应该是打开资源详情
+            }
+        });
+    });
+});
+</script>
+
+    <!-- 留言板 -->
+    <section class="contact" id="testimonials" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">留言板</h2>
+            
+           <!-- 留言板容器 -->
+<div class="message-board">
+    <!-- 留言输入区域 -->
+    <div class="message-input">
+        <h3>留言板</h3>
+        <!-- 用户名输入框，默认值为"匿名用户" -->
+        <input type="text" id="username" placeholder="请输入用户名" value="匿名用户">
+        <!-- 留言内容输入框 -->
+        <textarea id="message-content" placeholder="请输入留言内容..."></textarea>
+        <!-- 提交按钮 -->
+        <button id="submit-btn">提交留言</button>
+        <!-- 表情选择按钮 -->
+        <div class="emoji-container">
+            <span class="emoji" data-emoji="😊">😊</span>
+            <span class="emoji" data-emoji="😂">😂</span>
+            <span class="emoji" data-emoji="❤️">❤️</span>
+            <span class="emoji" data-emoji="👍">👍</span>
+            <span class="emoji" data-emoji="🙏">🙏</span>
+        </div>
+    </div>
+    
+    <!-- 留言展示区域 -->
+    <div class="messages-container">
+        <div id="messages-list"></div>
+        <!-- 加载更多按钮 -->
+        <button id="load-more" style="display: none;">加载更多留言</button>
+    </div>
+</div>
+        </div>
+    </section>
+
+
+    <script >
+        // 等待DOM完全加载后执行
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取DOM元素
+    const messageInput = document.getElementById('message-content');
+    const usernameInput = document.getElementById('username');
+    const submitBtn = document.getElementById('submit-btn');
+    const messagesList = document.getElementById('messages-list');
+    const loadMoreBtn = document.getElementById('load-more');
+    const emojis = document.querySelectorAll('.emoji');
+    
+    // 初始化变量
+    let messages = []; // 存储留言的数组
+    let visibleMessages = 5; // 初始显示的留言数量
+    const sensitiveWords = ['骂人', '脏话', '敏感词']; // 敏感词列表
+    
+    // 从localStorage加载留言
+    loadMessages();
+    
+    // 提交按钮点击事件
+    submitBtn.addEventListener('click', function() {
+        addMessage();
+    });
+    
+    // 输入框回车键提交
+    messageInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault(); // 阻止默认换行行为
+            addMessage();
+        }
+    });
+    
+    // 加载更多按钮点击事件
+    loadMoreBtn.addEventListener('click', function() {
+        visibleMessages += 5; // 每次增加5条可见留言
+        renderMessages();
+    });
+    
+    // 表情点击事件
+    emojis.forEach(emoji => {
+        emoji.addEventListener('click', function() {
+            // 在光标位置插入表情
+            const cursorPos = messageInput.selectionStart;
+            const text = messageInput.value;
+            const emojiChar = this.getAttribute('data-emoji');
+            
+            messageInput.value = text.substring(0, cursorPos) + emojiChar + text.substring(cursorPos);
+            
+            // 将光标定位到插入的表情后面
+            messageInput.selectionStart = cursorPos + emojiChar.length;
+            messageInput.selectionEnd = cursorPos + emojiChar.length;
+            messageInput.focus();
+        });
+    });
+    
+    // 监听storage事件，实现多标签页同步
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'messages') {
+            messages = JSON.parse(e.newValue);
+            renderMessages();
+        }
+    });
+    
+    // 添加新留言函数
+    function addMessage() {
+        const content = messageInput.value.trim();
+        const username = usernameInput.value.trim() || '匿名用户';
+        
+        // 验证留言内容
+        if (!content) {
+            alert('留言内容不能为空！');
+            return;
+        }
+        
+        // 检查敏感词
+        if (containsSensitiveWord(content)) {
+            alert('留言包含敏感词，请修改后重新提交！');
+            return;
+        }
+        
+        // 创建新留言对象
+        const newMessage = {
+            id: Date.now(), // 使用时间戳作为唯一ID
+            username: username,
+            content: content,
+            timestamp: new Date().toISOString() // 存储ISO格式的时间字符串
+        };
+        
+        // 添加到留言数组的开头（最新留言在最前面）
+        messages.unshift(newMessage);
+        
+        // 保存到localStorage
+        saveMessages();
+        
+        // 重新渲染留言列表
+        renderMessages();
+        
+        // 清空输入框
+        messageInput.value = '';
+    }
+    
+    // 从localStorage加载留言
+    function loadMessages() {
+        const savedMessages = localStorage.getItem('messages');
+        if (savedMessages) {
+            messages = JSON.parse(savedMessages);
+            renderMessages();
+        }
+    }
+    
+    // 保存留言到localStorage
+    function saveMessages() {
+        localStorage.setItem('messages', JSON.stringify(messages));
+    }
+    
+    // 渲染留言列表
+    function renderMessages() {
+        // 清空当前列表
+        messagesList.innerHTML = '';
+        
+        // 确定要显示的留言数量
+        const displayCount = Math.min(visibleMessages, messages.length);
+        
+        // 如果有更多留言，显示"加载更多"按钮
+        loadMoreBtn.style.display = visibleMessages < messages.length ? 'block' : 'none';
+        
+        // 渲染每条留言
+        for (let i = 0; i < displayCount; i++) {
+            const message = messages[i];
+            const messageElement = createMessageElement(message);
+            messagesList.appendChild(messageElement);
+        }
+    }
+    
+    // 创建单个留言的DOM元素
+    function createMessageElement(message) {
+        const messageCard = document.createElement('div');
+        messageCard.className = 'message-card';
+        messageCard.dataset.id = message.id;
+        
+        // 格式化时间
+        const date = new Date(message.timestamp);
+        const formattedTime = `${date.getFullYear()}-${padZero(date.getMonth() + 1)}-${padZero(date.getDate())} ${padZero(date.getHours())}:${padZero(date.getMinutes())}`;
+        
+        // 创建留言HTML结构
+        messageCard.innerHTML = `
+            <div class="message-header">
+                <span class="message-username">${escapeHtml(message.username)}</span>
+                <span class="message-time">${formattedTime}</span>
+            </div>
+            <div class="message-body">${escapeHtml(message.content).replace(/\n/g, '<br>')}</div>
+            <button class="delete-btn" data-id="${message.id}">删除</button>
+        `;
+        
+        // 添加删除按钮事件
+        const deleteBtn = messageCard.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', function() {
+            deleteMessage(message.id);
+        });
+        
+        return messageCard;
+    }
+    
+    // 删除留言函数
+    function deleteMessage(id) {
+        if (confirm('确定要删除这条留言吗？')) {
+            // 过滤掉指定ID的留言
+            messages = messages.filter(message => message.id !== id);
+            // 保存到localStorage
+            saveMessages();
+            // 重新渲染
+            renderMessages();
+        }
+    }
+    
+    // 检查是否包含敏感词
+    function containsSensitiveWord(text) {
+        return sensitiveWords.some(word => text.includes(word));
+    }
+    
+    // 辅助函数：在数字前补零
+    function padZero(num) {
+        return num < 10 ? `0${num}` : num;
+    }
+    
+    // 辅助函数：转义HTML，防止XSS攻击
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+});
+    </script>
+
+    <!-- 页脚 -->
+    <footer class="footer" >
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>关于我们</h3>
+                    <p>"心灵花园"青少年心理健康公益平台，致力于为青少年提供专业的心理健康服务...</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#home" class="nav-link">首页</a></li>
+                    <li><a href="#projects" class="nav-link">项目展示</a></li>
+                    <li><a href="#services" class="nav-link">服务预约</a></li>
+                    <li><a href="#volunteers" class="nav-link">志愿者</a></li>
+                    <li><a href="#resources" class="nav-link">资源中心</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>联系方式</h3>
+                    <p><i class="fas fa-envelope"></i> contact@xinlingarden.org</p>
+                    <p><i class="fas fa-phone-alt"></i> 12355</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 心灵花园青少年心理健康公益平台. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+  <script>
+// 页脚专属跳转逻辑
+document.querySelectorAll('.footer-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // 阻止默认跳转
+        
+        // 1. 隐藏所有页面
+        document.querySelectorAll('main, section').forEach(page => {
+            page.style.display = 'none';
+        });
+        
+        // 2. 显示目标页面（从href提取ID，如#home→home）
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).style.display = 'block';
+        
+        // 3. 可选：滚动到页面顶部
+        window.scrollTo(0, 0);
+    });
+});
+</script>
+
+        
+</body>
+</html>
